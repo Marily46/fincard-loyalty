@@ -2,6 +2,13 @@
 
 API para carga y validación de transacciones de puntos de aliados comerciales, con almacenamiento tipo S3, catalogación tipo Glue y reportes de liquidación.
 
+**🌐 Demo desplegada en AWS (EC2 + ECR, us-east-2):** http://3.134.76.128
+```bash
+curl http://3.134.76.128/health
+curl -F "file=@data/sample-transactions.csv" http://3.134.76.128/api/v1/transactions/upload
+curl "http://3.134.76.128/api/v1/settlements/PART01?from=2026-07-01&to=2026-07-05"
+```
+
 **Stack:** Node.js 20+ · TypeScript (strict) · Fastify 5 · Vitest · Docker
 
 ## Ejecución local
@@ -130,4 +137,4 @@ Validación estricta de toda entrada (regex por campo, fechas de calendario real
 - [x] ADRs en `docs/adr/`
 - [x] Dockerfile multi-stage
 - [x] IaC: Terraform para AWS App Runner + ECR en [infra/](infra/)
-- [ ] URL desplegada (ver `infra/README.md` para el paso a paso de despliegue)
+- [x] Desplegado en AWS: imagen en ECR ejecutándose en EC2 (us-east-2) — http://3.134.76.128
