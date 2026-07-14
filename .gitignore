@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+data/s3/
+data/db.json
+data/glue-catalog.json
+*.log
+.env
