@@ -6,3 +6,6 @@ data/db.json
 data/glue-catalog.json
 *.log
 .env
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate*
